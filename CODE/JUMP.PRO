@@ -11,7 +11,8 @@ SOURCES += \
     IMGS.CPP \
     DBUG.CPP \
     MENU.CPP \
-    FKYP.CPP
+    FKYP.CPP \
+    HELP.TPP
 INCLUDEPATH += ../SDL2/include/
 LIBS += -L../SDL2/lib/x86 -lSDL2
 LIBS += -L../SDL2/lib/x86 -lSDL2main

@@ -11,8 +11,13 @@
  public:
      SDL_Texture* IMGS_IMGS_TEXT = nullptr;
      SDL_Rect     IMGS_IMGS_POST;
+     int          IMGS_IMGS_UPDO;
+     IMGS(){}
      IMGS(const string ,int ,int ,int ,int ,int );
+void SETP(const string ,int ,int ,int ,int ,int );
+                   void SETP(int ,int ,int ,int );
                    void SHOW(int ,int ,int ,int );
+                   void SHOW(int ,int );
                    void SHOW();
  };
 #endif // IMGS_HPP

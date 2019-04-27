@@ -49,4 +49,6 @@ int DBUG_TFPS(int DBUG_TFPS_NFPS,const string DBUG_OUTP_NAME,const string DBUG_O
     cout<<"0x"<<WIND_RENDP<<DBUG_OUTP_NAME<<": "<<DBUG_TFPS_NFPS<<DBUG_OUTP_TEXT<<endl;
     return 0;
 }
+
+
 #endif
