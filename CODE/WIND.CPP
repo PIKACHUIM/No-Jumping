@@ -5,6 +5,7 @@
 int WIND_INIT()
 {
     /*------------------------------创建窗口------------------------------*/
+
     if(SDL_Init(SDL_INIT_VIDEO)<0) return -1;
     WIND_WINDP=SDL_CreateWindow(WIND_TITLE,         //窗口标题
                             SDL_WINDOWPOS_UNDEFINED,//垂直位置
@@ -14,6 +15,7 @@ int WIND_INIT()
                             SDL_WINDOW_SHOWN        //显示窗口
                             );
     DBUG_OUTP(WIND_WINDP," LOAD_WINDOW","WIND_WINDP");
+    srand((unsigned)time(0));
 
     return 0;
 }

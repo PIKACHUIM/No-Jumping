@@ -8,7 +8,7 @@
 
 int main(int argc,char *argv[])
 {
-    DBUG_INIT(true,argc,argv);
+    DBUG_INIT(argc,argv);
     WIND_INIT();
     REND_INIT();
     MENU_SHOW();

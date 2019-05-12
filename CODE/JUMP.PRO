@@ -12,7 +12,9 @@ SOURCES += \
     DBUG.CPP \
     MENU.CPP \
     FKYP.CPP \
-    HELP.TPP
+    HELP.TPP \
+    TYPE.CPP \
+    GAME.CPP
 INCLUDEPATH += ../SDL2/include/
 LIBS += -L../SDL2/lib/x86 -lSDL2
 LIBS += -L../SDL2/lib/x86 -lSDL2main
@@ -21,4 +23,6 @@ LIBS += -L../SDL2/lib/x86 -lSDL2_image
 
 HEADERS += \
     IMGS.HPP \
-    FKYP.HPP
+    FKYP.HPP \
+    REND.HPP \
+    TYPE.HPP
