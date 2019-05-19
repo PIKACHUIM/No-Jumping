@@ -14,7 +14,8 @@ SOURCES += \
     FKYP.CPP \
     HELP.TPP \
     TYPE.CPP \
-    GAME.CPP
+    GAME.CPP \
+    READ.CPP
 INCLUDEPATH += ../SDL2/include/
 LIBS += -L../SDL2/lib/x86 -lSDL2
 LIBS += -L../SDL2/lib/x86 -lSDL2main
@@ -25,4 +26,5 @@ HEADERS += \
     IMGS.HPP \
     FKYP.HPP \
     REND.HPP \
-    TYPE.HPP
+    TYPE.HPP \
+    READ.HPP

@@ -1,2 +1,2 @@
-JUMP -d
+JUMP.EXE -D
 PAUSE

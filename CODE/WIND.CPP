@@ -25,6 +25,6 @@ int WIND_EXIT()
   SDL_DestroyRenderer(WIND_RENDP);                  //销毁渲染
     SDL_DestroyWindow(WIND_WINDP);                  //销毁窗口
     SDL_Quit();                                     //退出程序
-    exit(0);
+    return 0;
 }
 

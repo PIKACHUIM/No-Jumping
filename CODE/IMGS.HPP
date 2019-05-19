@@ -1,11 +1,6 @@
-#ifndef IMGS_HPP
-#define IMGS_HPP
-
-
-
+#pragma once
 #include "HEAD.CPP"
 #include "DBUG.CPP"
-/*---------------------使用说明(图片类型，图片编号，水平位置，垂直位置，水平大小，垂直大小)---------------------*/
  class IMGS
  {
  public:
@@ -20,4 +15,3 @@ void SETP(                   int ,int ,int ,int );//----------------，水平位
                    void SHOW(               int );//----------------，水平变量--------------------------
                    void SHOW();
  };
-#endif // IMGS_HPP

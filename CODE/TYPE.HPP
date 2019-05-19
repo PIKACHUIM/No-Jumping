@@ -1,6 +1,4 @@
-#ifndef TYPE_HPP
-#define TYPE_HPP
-
+#pragma once
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 #include "REND.HPP"
@@ -14,4 +12,3 @@ public:
          TYPE();
 };
 
-#endif // TYPE_HPP
