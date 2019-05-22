@@ -1,4 +1,6 @@
 ﻿#pragma once
+#ifndef WIND_CPP
+#define WIND_CPP
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 
@@ -25,6 +27,9 @@ int WIND_EXIT()
   SDL_DestroyRenderer(WIND_RENDP);                  //销毁渲染
     SDL_DestroyWindow(WIND_WINDP);                  //销毁窗口
     SDL_Quit();                                     //退出程序
+
+    system("tskill NOJUMPING*");
+    exit(0);
     return 0;
 }
-
+#endif

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef TYPE_HPP
+#define TYPE_HPP
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 #include "REND.HPP"
@@ -11,4 +13,4 @@ public:
     void SETP(int ,int );
          TYPE();
 };
-
+#endif

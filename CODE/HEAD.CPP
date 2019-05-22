@@ -1,5 +1,6 @@
 ﻿#pragma once
-
+#ifndef HEAD_CPP
+#define HEAD_CPP
 #include <iostream>
 #include <string>
 #include "SDL.h"
@@ -23,3 +24,4 @@ static       int    DBUG_NOKIL = 1;//C鸟不会死
 static       int    DBUG_DEBUG = 1;//D调试模式
 static       int    DBUG_EEOOR = 1;//E输出错误
 static       int    DBUG_OTFPS = 0;//F输出帧率
+#endif

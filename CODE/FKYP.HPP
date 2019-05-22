@@ -1,5 +1,6 @@
 #pragma once
-#include "IMGS.HPP"
+#ifndef FKYP_HPP
+#define FKYP_HPP
 
 class FKYP
 {
@@ -9,3 +10,4 @@ public:
     int  NOWH;
     FKYP(int ,int ,int );
 };
+#endif

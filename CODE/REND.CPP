@@ -1,4 +1,6 @@
 ﻿#pragma once
+#ifndef REND_CPP
+#define REND_CPP
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 #include "REND.HPP"
@@ -18,15 +20,16 @@ void REND::SHOW()
     {
        //SDL_RenderCopy(WIND_RENDP, FKYP[(DATA-DATA%10)/10][DATA%10], nullptr, &POST[LOOP_TMPS]);
     }
-
 }
 int REND_INIT()
 {
     WIND_RENDP = SDL_CreateRenderer(WIND_WINDP,     //创建渲染
-                                    -1,
+                                    -1,             //选择显卡
                                     DBUG_GUPMD);    //显卡加速
-                          DBUG_OUTP(WIND_RENDP," LOAD_RENDER","WIND_RENDP");
-                    SDL_RenderClear(WIND_RENDP);
+                          DBUG_OUTP(WIND_RENDP,     //调试输出
+                                  " LOAD_RENDER",   //执行内容
+                                   "WIND_RENDP");   //执行指针
+                    SDL_RenderClear(WIND_RENDP);    //清空渲染
     return 0;
 }
 int REND_CLEN()
@@ -39,3 +42,4 @@ int REND_SHOW()
   SDL_RenderPresent(WIND_RENDP);
     return 0;
 }
+#endif

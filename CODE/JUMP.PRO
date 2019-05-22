@@ -12,7 +12,6 @@ SOURCES += \
     DBUG.CPP \
     MENU.CPP \
     FKYP.CPP \
-    HELP.TPP \
     TYPE.CPP \
     GAME.CPP \
     READ.CPP

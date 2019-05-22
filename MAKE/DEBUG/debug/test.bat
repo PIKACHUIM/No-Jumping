@@ -1,2 +1,0 @@
-JUMP.EXE -D
-PAUSE

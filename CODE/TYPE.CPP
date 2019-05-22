@@ -1,3 +1,6 @@
+#pragma once
+#ifndef TYPE_CPP
+#define TYPE_CPP
 #include "TYPE.HPP"
 
 void TYPE::SETP(int TYPE_NUMS,int TYPE_SPEE)
@@ -9,3 +12,4 @@ void TYPE::SETP(int TYPE_NUMS,int TYPE_SPEE)
   SPEE=TYPE_SPEE;
 }
 TYPE::TYPE(){};
+#endif

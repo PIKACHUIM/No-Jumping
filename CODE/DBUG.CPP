@@ -1,5 +1,6 @@
-﻿#ifndef CPP_DBUG
-#define CPP_DBUG
+﻿#pragma once
+#ifndef DBUG_CPP
+#define DBUG_CPP
 
 #include <time.h>
 #include "HEAD.CPP"

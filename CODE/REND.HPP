@@ -1,4 +1,6 @@
 #pragma once
+#ifndef REND_HPP
+#define REND_HPP
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 #include "IMGS.CPP"
@@ -11,3 +13,4 @@ public:
              REND ();
         void SHOW ();
 };
+#endif

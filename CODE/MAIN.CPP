@@ -1,4 +1,7 @@
-﻿#include"WIND.CPP"
+﻿#pragma once
+#ifndef MAIN_CPP
+#define MAIN_CPP
+#include"WIND.CPP"
 #include"REND.CPP"
 #include"IMGS.CPP"
 #include"DBUG.CPP"
@@ -16,3 +19,4 @@ int main(int argc,char *argv[])
     WIND_EXIT();
     return 0;
 }
+#endif

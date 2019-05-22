@@ -1,4 +1,6 @@
 ﻿#pragma once
+#ifndef IMGS_CPP
+#define IMGS_CPP
 #include "HEAD.CPP"
 #include "DBUG.CPP"
 #include "IMGS.HPP"
@@ -84,3 +86,4 @@ void IMGS::SHOW()
 {
     SDL_RenderCopy(WIND_RENDP, IMGS_IMGS_TEXT, nullptr, &IMGS_IMGS_POST);
 }
+#endif
