@@ -3,7 +3,7 @@
 #define IMGS_CPP
 #include"IMGS.HPP"
 
-SDL_Texture* IMGS_LOAD(const string &IMGS_LOAD_FILES, SDL_Renderer *IMGS_LOAD_RENDP)
+STP IMGS_LOAD(const string &IMGS_LOAD_FILES, SDL_Renderer *IMGS_LOAD_RENDP)
 {
     string       IMGS_LOAD_PATH = "../ASSE/" + IMGS_LOAD_FILES;
     SDL_Surface* IMGS_LOAD_TMPP = nullptr;
@@ -14,7 +14,7 @@ SDL_Texture* IMGS_LOAD(const string &IMGS_LOAD_FILES, SDL_Renderer *IMGS_LOAD_RE
  SDL_FreeSurface(IMGS_LOAD_TMPP);
           return IMGS_LOAD_TEXT;
 }
-int    IMGS_SHOW(SDL_Texture* IMGS_SHOW_TEXT,int IMGS_SHOW_SPWZ,int IMGS_SHOW_CZWZ,int IMGS_SHOW_SPDX,int IMGS_SHOW_CZDX)
+int IMGS_SHOW(SDL_Texture* IMGS_SHOW_TEXT,int IMGS_SHOW_SPWZ,int IMGS_SHOW_CZWZ,int IMGS_SHOW_SPDX,int IMGS_SHOW_CZDX)
 {
            SDL_Rect           IMGS_SHOW_POST;
            IMGS_SHOW_POST.x = IMGS_SHOW_SPWZ;

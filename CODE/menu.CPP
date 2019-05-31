@@ -8,6 +8,7 @@
 #include"LIBS/TYPE.CPP"
 #include"EXTL/WIND.CPP"
 #include"EXTL/HEAD.CPP"
+#include"CGMS.CPP"
 static IMGS      MENU_FKYPS[15];                         //创建主菜单方块
 static IMGS      MENU_MENUS[ 8];                         //创建主菜单控件
 static READ      MENU_LOADS("MAPS","MAP","MENU",1,5);    //读取主菜单配置
@@ -92,7 +93,12 @@ int MENU_DEAL()
                          MENU_EVENT_Y,
                          452,300,
                          270,66)==1)
-                         WIND_EXIT();   //闯关模式
+            {            CGMS T1;
+                         T1.CGMS_INIT(11);
+                         T1.CGMS_DEAL();
+                         //WIND_EXIT();   //闯关模式
+            }
+
             if(MENU_PDAN(MENU_EVENT_X,
                          MENU_EVENT_Y,
                          760,300,

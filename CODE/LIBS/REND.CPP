@@ -2,24 +2,7 @@
 #ifndef REND_CPP
 #define REND_CPP
 #include"REND.HPP"
-REND::REND()
-{
-    NOWN=1;
-    for(int LOOP_TMPS=1;LOOP_TMPS<=15;LOOP_TMPS++)
-    {
-      POST[LOOP_TMPS].x=-100+100*LOOP_TMPS;
-      POST[LOOP_TMPS].y= 380;
-      POST[LOOP_TMPS].w= 81;
-      POST[LOOP_TMPS].h= 511;
-    }
-}
-void REND::SHOW()
-{
-    for(int LOOP_TMPS=1;LOOP_TMPS<=15;LOOP_TMPS++)
-    {
-       //SDL_RenderCopy(WIND_RENDP, FKYP[(DATA-DATA%10)/10][DATA%10], nullptr, &POST[LOOP_TMPS]);
-    }
-}
+
 int REND_INIT()
 {
     WIND_RENDP = SDL_CreateRenderer(WIND_WINDP,     //创建渲染

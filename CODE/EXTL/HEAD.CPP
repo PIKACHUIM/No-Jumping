@@ -6,7 +6,8 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include <time.h>
-
+#define STP SDL_Texture*
+#define SDP SDL_Rect
 using namespace std;
 
 static SDL_Renderer*WIND_RENDP = nullptr;

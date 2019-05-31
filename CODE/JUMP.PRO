@@ -13,7 +13,8 @@ SOURCES += \
     LIBS/REND.CPP \
     LIBS/FKYP.CPP \
     LIBS/TYPE.CPP \
-    CGMS.CPP
+    CGMS.CPP \
+    EXTL/WIND.CPP
 INCLUDEPATH += ../SDL2/include/
 LIBS += -L../SDL2/lib/x86 -lSDL2
 LIBS += -L../SDL2/lib/x86 -lSDL2main
