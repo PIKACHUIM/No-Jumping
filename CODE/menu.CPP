@@ -1,16 +1,16 @@
 #pragma once
 #ifndef MENU_CPP
 #define MENU_CPP
-#include "HEAD.CPP"
-#include "DBUG.CPP"
-#include "IMGS.CPP"
-#include "REND.CPP"
-#include "TYPE.CPP"
-#include "READ.CPP"
-#include "WIND.CPP"
+#include"LIBS/IMGS.CPP"
+#include"LIBS/READ.CPP"
+#include"LIBS/TYPE.CPP"
+#include"LIBS/REND.CPP"
+#include"LIBS/TYPE.CPP"
+#include"EXTL/WIND.CPP"
+#include"EXTL/HEAD.CPP"
 static IMGS      MENU_FKYPS[15];                         //创建主菜单方块
 static IMGS      MENU_MENUS[ 8];                         //创建主菜单控件
-static READ      MENU_LOADS("MAPS","MAP","MENU",01);     //读取主菜单配置
+static READ      MENU_LOADS("MAPS","MAP","MENU",1,5);    //读取主菜单配置
 static IMGS      MENU_BIRDS;                             //创建主菜单小鸟
 static double    TIME_LAST = SDL_GetTicks();
 static double    TIME_LOOP = SDL_GetTicks();
@@ -36,8 +36,7 @@ int MENU_INIT()
     for(int LOOP_A= 0,LOOP_T=1;
             LOOP_A<=5;LOOP_A++,LOOP_T++)
     for(int LOOP_B=1;LOOP_B<=3;LOOP_B++)
-       FKTP[LOOP_A][LOOP_B].SETP
-           (LOOP_A*10+LOOP_B,LOOP_T);
+       FKTP[LOOP_A][LOOP_B].SETP(LOOP_A*10+LOOP_B,LOOP_T);
     BIRD_POTS = rand()%10+3;
     MENU_BIRDS.SETP("BIRD",01,440,000,71,57);
     return 0;

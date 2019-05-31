@@ -1,22 +1,14 @@
-﻿#pragma once
-#ifndef MAIN_CPP
-#define MAIN_CPP
-#include"WIND.CPP"
-#include"REND.CPP"
-#include"IMGS.CPP"
-#include"DBUG.CPP"
-#include"MENU.CPP"
 #undef main
-
-
+#include "./EXTL/WIND.CPP"
+#include "./LIBS/REND.CPP"
+#include "MENU.CPP"
 int main(int argc,char *argv[])
 {
-    DBUG_INIT(argc,argv);
-    WIND_INIT();
+    WIND_INIT(argc,argv);
     REND_INIT();
     MENU_INIT();
     MENU_SHOW();
     WIND_EXIT();
     return 0;
 }
-#endif
+

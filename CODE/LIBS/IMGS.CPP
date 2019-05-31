@@ -1,0 +1,88 @@
+﻿#pragma once
+#ifndef IMGS_CPP
+#define IMGS_CPP
+#include"IMGS.HPP"
+
+SDL_Texture* IMGS_LOAD(const string &IMGS_LOAD_FILES, SDL_Renderer *IMGS_LOAD_RENDP)
+{
+    string       IMGS_LOAD_PATH = "../ASSE/" + IMGS_LOAD_FILES;
+    SDL_Surface* IMGS_LOAD_TMPP = nullptr;
+    SDL_Texture* IMGS_LOAD_TEXT = nullptr;
+                 IMGS_LOAD_TMPP = IMG_Load(IMGS_LOAD_PATH.c_str());
+                 IMGS_LOAD_TEXT = SDL_CreateTextureFromSurface(IMGS_LOAD_RENDP, IMGS_LOAD_TMPP);
+       DBUG_OUTP(IMGS_LOAD_TMPP," LOAD_PICTUR",IMGS_LOAD_PATH);
+ SDL_FreeSurface(IMGS_LOAD_TMPP);
+          return IMGS_LOAD_TEXT;
+}
+int    IMGS_SHOW(SDL_Texture* IMGS_SHOW_TEXT,int IMGS_SHOW_SPWZ,int IMGS_SHOW_CZWZ,int IMGS_SHOW_SPDX,int IMGS_SHOW_CZDX)
+{
+           SDL_Rect           IMGS_SHOW_POST;
+           IMGS_SHOW_POST.x = IMGS_SHOW_SPWZ;
+           IMGS_SHOW_POST.y = IMGS_SHOW_CZWZ;
+           IMGS_SHOW_POST.w = IMGS_SHOW_SPDX;
+           IMGS_SHOW_POST.h = IMGS_SHOW_CZDX;
+   SDL_RenderCopy(WIND_RENDP, IMGS_SHOW_TEXT, nullptr, &IMGS_SHOW_POST);
+SDL_RenderPresent(WIND_RENDP);
+    return 0;
+}
+/*---------------------使用说明(图片类型，图片编号，水平位置，垂直位置，水平大小，垂直大小)---------------------*/
+int IMGS_PNTD(const string IMGS_PNTD_TYPT,int IMGS_PNTD_NUMS,int IMGS_PNTD_SPWZ,int IMGS_PNTD_CZWZ,int IMGS_PNTD_SPDX,int IMGS_PNTD_CZDX)
+{
+    string IMGS_PNTD_FILE="";
+    if(IMGS_PNTD_NUMS<=9) IMGS_PNTD_FILE="PNG_"+IMGS_PNTD_TYPT+"_"+"0"+to_string(IMGS_PNTD_NUMS)+".PNG";
+    else                  IMGS_PNTD_FILE="PNG_"+IMGS_PNTD_TYPT+"_"+    to_string(IMGS_PNTD_NUMS)+".PNG";
+    SDL_Texture* IMGS_PNTD_TEXT = IMGS_LOAD(IMGS_PNTD_FILE,WIND_RENDP);
+       IMGS_SHOW(IMGS_PNTD_TEXT,IMGS_PNTD_SPWZ,IMGS_PNTD_CZWZ,IMGS_PNTD_SPDX,IMGS_PNTD_CZDX);
+    return 0;
+}
+    IMGS::IMGS(const string IMGS_IMGS_TYPT,int IMGS_IMGS_NUMS,int IMGS_IMGS_SPWZ,int IMGS_IMGS_CZWZ,int IMGS_IMGS_SPDX,int IMGS_IMGS_CZDX)
+{
+       IMGS_IMGS_POST.x = IMGS_IMGS_SPWZ;
+       IMGS_IMGS_POST.y = IMGS_IMGS_CZWZ;
+       IMGS_IMGS_POST.w = IMGS_IMGS_SPDX;
+       IMGS_IMGS_POST.h = IMGS_IMGS_CZDX;
+    string IMGS_PNTD_FILE="";
+    if(IMGS_IMGS_NUMS<=9) IMGS_PNTD_FILE="PNG_"+IMGS_IMGS_TYPT+"_"+"0"+to_string(IMGS_IMGS_NUMS)+".PNG";
+    else                  IMGS_PNTD_FILE="PNG_"+IMGS_IMGS_TYPT+"_"+    to_string(IMGS_IMGS_NUMS)+".PNG";
+       IMGS_IMGS_TEXT = IMGS_LOAD(IMGS_PNTD_FILE,WIND_RENDP);
+}
+
+void IMGS::SETP(const string IMGS_SETP_TYPT,int IMGS_SETP_NUMS,int IMGS_SETP_SPWZ,int IMGS_SETP_CZWZ,int IMGS_SETP_SPDX,int IMGS_SETP_CZDX)
+{
+         IMGS_IMGS_POST.x = IMGS_SETP_SPWZ;
+         IMGS_IMGS_POST.y = IMGS_SETP_CZWZ;
+         IMGS_IMGS_POST.w = IMGS_SETP_SPDX;
+         IMGS_IMGS_POST.h = IMGS_SETP_CZDX;
+         string IMGS_SETP_FILE="";
+      if(IMGS_SETP_NUMS<=9) IMGS_SETP_FILE="PNG_"+IMGS_SETP_TYPT+"_"+"0"+to_string(IMGS_SETP_NUMS)+".PNG";
+         else               IMGS_SETP_FILE="PNG_"+IMGS_SETP_TYPT+"_"+    to_string(IMGS_SETP_NUMS)+".PNG";
+         IMGS_IMGS_TEXT   = IMGS_LOAD(IMGS_SETP_FILE,WIND_RENDP);
+}
+
+void IMGS::SETP(int IMGS_SETP_SPWZ,int IMGS_SETP_CZWZ,int IMGS_SETP_SPDX,int IMGS_SETP_CZDX)
+{
+         IMGS_IMGS_POST.x = IMGS_SETP_SPWZ;
+         IMGS_IMGS_POST.y = IMGS_SETP_CZWZ;
+         IMGS_IMGS_POST.w = IMGS_SETP_SPDX;
+         IMGS_IMGS_POST.h = IMGS_SETP_CZDX;
+}
+
+void IMGS::SHOW(int IMGS_SHOW_SPWZ,int IMGS_SHOW_CZWZ,int IMGS_SHOW_SPDX,int IMGS_SHOW_CZDX)
+{
+    IMGS_IMGS_POST.x = IMGS_SHOW_SPWZ;
+    IMGS_IMGS_POST.y = IMGS_SHOW_CZWZ;
+    IMGS_IMGS_POST.w = IMGS_SHOW_SPDX;
+    IMGS_IMGS_POST.h = IMGS_SHOW_CZDX;
+}
+
+void IMGS::SHOW(int IMGS_SHOW_DATA)
+{
+    IMGS_IMGS_POST.y += IMGS_SHOW_DATA;
+    SDL_RenderCopy(WIND_RENDP, IMGS_IMGS_TEXT, nullptr, &IMGS_IMGS_POST);
+}
+
+void IMGS::SHOW()
+{
+    SDL_RenderCopy(WIND_RENDP, IMGS_IMGS_TEXT, nullptr, &IMGS_IMGS_POST);
+}
+#endif
