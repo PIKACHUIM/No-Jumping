@@ -18,19 +18,26 @@ public:
     }
     int CGMS_SHOW()
     {
-        GAME_REND.SHOW();
         GAME_REND.EXEC();
+        GAME_REND.SHOW();
+
         return 0;
     }
     int CGMS_DEAL()
     {
         SDL_Event CGMS_EVEN;
-        while(1)
+        bool      CGMS_FLAG=0;
+        while(CGMS_EVEN.type!=SDL_QUIT)
         {
             while (SDL_PollEvent(&CGMS_EVEN))
             {
                 if(CGMS_EVEN.type==SDL_QUIT)
                  WIND_EXIT(); //关闭窗口
+                if(CGMS_EVEN.type==SDL_MOUSEBUTTONUP)
+                {
+                        GAME_REND.NOWN=GAME_REND.NOWN+1;
+
+                }
             }
             CGMS_SHOW();
             SDL_Delay(16);
@@ -38,17 +45,5 @@ public:
         return 0;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

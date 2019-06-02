@@ -239,6 +239,7 @@ Makefile: ..\CODE\JUMP.pro G:\QT\5.12.0\msvc2017\mkspecs\win32-msvc\qmake.conf G
 		G:\QT\5.12.0\msvc2017\mkspecs\features\qt_config.prf \
 		G:\QT\5.12.0\msvc2017\mkspecs\win32-msvc\qmake.conf \
 		G:\QT\5.12.0\msvc2017\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		G:\QT\5.12.0\msvc2017\mkspecs\features\exclusive_builds.prf \
 		G:\QT\5.12.0\msvc2017\mkspecs\common\msvc-version.conf \
 		G:\QT\5.12.0\msvc2017\mkspecs\features\toolchain.prf \
@@ -423,6 +424,7 @@ G:\QT\5.12.0\msvc2017\mkspecs\features\qt_functions.prf:
 G:\QT\5.12.0\msvc2017\mkspecs\features\qt_config.prf:
 G:\QT\5.12.0\msvc2017\mkspecs\win32-msvc\qmake.conf:
 G:\QT\5.12.0\msvc2017\mkspecs\features\spec_post.prf:
+.qmake.stash:
 G:\QT\5.12.0\msvc2017\mkspecs\features\exclusive_builds.prf:
 G:\QT\5.12.0\msvc2017\mkspecs\common\msvc-version.conf:
 G:\QT\5.12.0\msvc2017\mkspecs\features\toolchain.prf:
