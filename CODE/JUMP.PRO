@@ -6,6 +6,8 @@ CONFIG -= qt
 SOURCES += \
     MAIN.CPP \
     MENU.CPP \
+    YXXY.CPP \
+    CGMS.CPP \
     EXTL/DBUG.CPP \
     EXTL/HEAD.CPP \
     LIBS/IMGS.CPP \
@@ -13,13 +15,14 @@ SOURCES += \
     LIBS/REND.CPP \
     LIBS/FKYP.CPP \
     LIBS/TYPE.CPP \
-    CGMS.CPP \
     EXTL/WIND.CPP
+
 INCLUDEPATH += ../SDL2/include/
 LIBS += -L../SDL2/lib/x86 -lSDL2
 LIBS += -L../SDL2/lib/x86 -lSDL2main
 LIBS += -L../SDL2/lib/x86 -lSDL2test
 LIBS += -L../SDL2/lib/x86 -lSDL2_image
+LIBS += -L../SDL2/lib/x86 -lSDL2_ttf
 
 HEADERS += \
     LIBS/IMGS.HPP \
@@ -27,4 +30,6 @@ HEADERS += \
     LIBS/READ.HPP \
     LIBS/REND.HPP \
     LIBS/FKYP.HPP \
-    LIBS/TYPE.HPP
+    LIBS/TYPE.HPP \
+    LIBS/CGGQ.HPP \
+    LIBS/SAVE.HPP

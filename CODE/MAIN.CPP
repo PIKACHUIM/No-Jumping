@@ -1,9 +1,11 @@
+//#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 #undef main
 #include "./EXTL/WIND.CPP"
 #include "./LIBS/REND.CPP"
 #include "MENU.CPP"
 int main(int argc,char *argv[])
 {
+
     WIND_INIT(argc,argv);
     REND_INIT();
     MENU_INIT();

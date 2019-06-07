@@ -16,7 +16,7 @@ int WIND_INIT(int DBUG_INIT_ARGC,char** DBUG_INIT_ARGV)
                             SDL_WINDOW_SHOWN        //显示窗口
                             );
     DBUG_OUTP(WIND_WINDP," LOAD_WINDOW","WIND_WINDP");
-    srand((unsigned)time(0));
+    srand((unsigned)time(nullptr));
 
     return 0;
 }

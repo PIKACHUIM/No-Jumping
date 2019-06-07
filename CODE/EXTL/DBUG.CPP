@@ -3,8 +3,9 @@
 #define DBUG_CPP
 
 #include "HEAD.CPP"
+#include "windows.h"
 int DBUG_INIT(int DBUG_INIT_ARGC,char* DBUG_INIT_ARGV[])
-{   system("mode con:cols=77 lines=60");
+{   system("mode con:cols=79 lines=60");
     if(DBUG_INIT_ARGC>=2)for (int DBUG_INIT_LOOP=1;DBUG_INIT_LOOP<DBUG_INIT_ARGC;DBUG_INIT_ARGC++)
     {
         if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='a'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='A')DBUG_ACCED = 0;
@@ -13,11 +14,15 @@ int DBUG_INIT(int DBUG_INIT_ARGC,char* DBUG_INIT_ARGV[])
         if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='d'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='D')DBUG_DEBUG = 1;
         if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='e'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='E')DBUG_EEOOR = 1;
         if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='f'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='F')DBUG_OTFPS = 1;
+        if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='g'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='G')DBUG_OTIME = 1;
+        if(DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='h'||DBUG_INIT_ARGV[DBUG_INIT_LOOP][1]=='H')DBUG_OTIME = 1;
     }
     if(DBUG_ACCED ==0 ) DBUG_GUPMD-=2;
     if(DBUG_SYNCD ==0 ) DBUG_GUPMD-=4;
     if(DBUG_DEBUG)cout<<"--------------------------------DEBUG MODE ON--------------------------------"<<endl;
     else          cout<<"--------------------------------DEBUG MODE OFF-------------------------------"<<endl;
+    //HWND WIND_HWND=GetForegroundWindow();
+    //if(!DBUG_DEBUG)ShowWindow(WIND_HWND,0);
     return 0;
 }
 

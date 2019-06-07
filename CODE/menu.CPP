@@ -8,7 +8,7 @@
 #include"LIBS/TYPE.CPP"
 #include"EXTL/WIND.CPP"
 #include"EXTL/HEAD.CPP"
-#include"CGMS.CPP"
+#include"YXXY.CPP"
 static IMGS      MENU_FKYPS[15];                         //创建主菜单方块
 static IMGS      MENU_MENUS[ 8];                         //创建主菜单控件
 static READ      MENU_LOADS("MAPS","MAP","MENU",1,5);    //读取主菜单配置
@@ -16,17 +16,17 @@ static IMGS      MENU_BIRDS;                             //创建主菜单小鸟
 static double    TIME_LAST = SDL_GetTicks();
 static double    TIME_LOOP = SDL_GetTicks();
 static int       BIRD_POTS = rand()%10+3;
+static SDE       MENU_EVEN;
 static TYPE      FKTP[6][4];
-static SDL_Event MENU_EVEN;
 int MENU_INIT()
 {
     for(int LOOP_A=1;LOOP_A<=7 ;LOOP_A++)        //读取菜单控件
         MENU_MENUS[LOOP_A].SETP("MENU",          //种类
                 MENU_LOADS.DATA[LOOP_A][1],      //编号
-                MENU_LOADS.DATA[LOOP_A][2],      //
-                MENU_LOADS.DATA[LOOP_A][3],      //
-                MENU_LOADS.DATA[LOOP_A][4],      //
-                MENU_LOADS.DATA[LOOP_A][5]);     //
+                MENU_LOADS.DATA[LOOP_A][2],      //水平
+                MENU_LOADS.DATA[LOOP_A][3],      //垂直
+                MENU_LOADS.DATA[LOOP_A][4],      //宽度
+                MENU_LOADS.DATA[LOOP_A][5]);     //高度
     for(int LOOP_T=0;LOOP_T<=14;LOOP_T++){       //设置方块状态
         MENU_FKYPS[LOOP_T].IMGS_IMGS_UPDO=1;     //向上
         MENU_FKYPS[LOOP_T].SETP("FKYP",          //种类
@@ -40,6 +40,7 @@ int MENU_INIT()
        FKTP[LOOP_A][LOOP_B].SETP(LOOP_A*10+LOOP_B,LOOP_T);
     BIRD_POTS = rand()%10+3;
     MENU_BIRDS.SETP("BIRD",01,440,000,71,57);
+    YXXY_INIT();
     return 0;
 
 }
@@ -93,17 +94,16 @@ int MENU_DEAL()
                          MENU_EVENT_Y,
                          452,300,
                          270,66)==1)
-            {            CGMS T1;
-                         T1.CGMS_INIT(11);
-                         T1.CGMS_DEAL();
-                         //WIND_EXIT();   //闯关模式
+            {
+                YXXY_INIT();
+                YXXY_INFT();//闯关模式
+                break;
             }
-
             if(MENU_PDAN(MENU_EVENT_X,
                          MENU_EVENT_Y,
                          760,300,
                          270,66)==1)
-                         WIND_EXIT();   //生存模式
+                 WIND_EXIT();   //生存模式
         }
     }
     return 0;
