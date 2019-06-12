@@ -17,7 +17,7 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStri
 INCPATH       = -I..\CODE -I. -I..\SDL2\include -IG:\QT\5.12.0\msvc2017\mkspecs\win32-msvc 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /DEBUG /SUBSYSTEM:CONSOLE "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:..\SDL2\lib\x86 ..\SDL2\lib\x86\SDL2.lib ..\SDL2\lib\x86\SDL2main.lib ..\SDL2\lib\x86\SDL2test.lib ..\SDL2\lib\x86\SDL2_image.lib   
+LIBS          = /LIBPATH:..\SDL2\lib\x86 ..\SDL2\lib\x86\SDL2.lib ..\SDL2\lib\x86\SDL2main.lib ..\SDL2\lib\x86\SDL2test.lib ..\SDL2\lib\x86\SDL2_image.lib ..\SDL2\lib\x86\SDL2_ttf.lib   
 QMAKE         = G:\QT\5.12.0\msvc2017\bin\qmake.exe
 IDC           = idc
 IDL           = midl /NOLOGO
@@ -53,7 +53,10 @@ DIST          =  LIBS/IMGS.HPP \
 		LIBS/READ.HPP \
 		LIBS/REND.HPP \
 		LIBS/FKYP.HPP \
-		LIBS/TYPE.HPP ..\CODE\MAIN.CPP
+		LIBS/TYPE.HPP \
+		LIBS/CGGQ.HPP \
+		LIBS/SAVE.HPP \
+		LIBS/FONT.HPP ..\CODE\MAIN.CPP
 QMAKE_TARGET  = JUMP
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = JUMP.exe
@@ -197,6 +200,7 @@ debug\MAIN.obj: ..\CODE\MAIN.CPP ..\CODE\EXTL\WIND.CPP \
 		..\SDL2\include\SDL_timer.h \
 		..\SDL2\include\SDL_version.h \
 		..\SDL2\include\SDL_image.h \
+		..\SDL2\include\SDL_ttf.h \
 		..\CODE\EXTL\DBUG.CPP \
 		..\CODE\LIBS\REND.CPP \
 		..\CODE\LIBS\REND.HPP \
@@ -209,7 +213,13 @@ debug\MAIN.obj: ..\CODE\MAIN.CPP ..\CODE\EXTL\WIND.CPP \
 		..\CODE\LIBS\IMGS.CPP \
 		..\CODE\LIBS\IMGS.HPP \
 		..\CODE\MENU.CPP \
-		..\CODE\CGMS.CPP
+		..\CODE\YXXY.CPP \
+		..\CODE\LIBS\FONT.CPP \
+		..\CODE\LIBS\FONT.HPP \
+		..\CODE\CGMS.CPP \
+		..\CODE\LIBS\SAVE.CPP \
+		..\CODE\LIBS\SAVE.HPP \
+		..\CODE\LIBS\CGGQ.HPP
 
 ####### Install
 

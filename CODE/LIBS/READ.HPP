@@ -4,6 +4,9 @@
 #include"../EXTL/HEAD.CPP"
 #include"../EXTL/DBUG.CPP"
 #include<stdio.h>
+/*---READ类
+ * 负责底层文件调用，读写
+ */
 class READ
 {
 public:

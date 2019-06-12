@@ -1,0 +1,33 @@
+# Project: GAME
+# Makefile created by Dev-C++ 5.8.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = GAME_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS     = -m32 -g3
+INCS     = 
+CXXINCS  = 
+BIN      = GAME.exe
+CXXFLAGS = $(CXXINCS) -m32 -Wall -Wextra -g3
+CFLAGS   = $(INCS) -m32 -Wall -Wextra -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+GAME_private.res: GAME_private.rc 
+	$(WINDRES) -i GAME_private.rc -F pe-i386 --input-format=rc -o GAME_private.res -O coff 
+

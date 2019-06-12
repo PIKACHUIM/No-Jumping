@@ -103,7 +103,8 @@ int MENU_DEAL()
                          MENU_EVENT_Y,
                          760,300,
                          270,66)==1)
-                 WIND_EXIT();   //生存模式
+                  continue;
+                 //WIND_EXIT();   //生存模式
         }
     }
     return 0;
