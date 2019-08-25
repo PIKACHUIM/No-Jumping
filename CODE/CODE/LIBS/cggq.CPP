@@ -1,0 +1,5 @@
+#include"CGGQ.HPP"
+CGGQ::CGGQ()
+{
+    CGID=1;CGTM=99999;CGLV=0;
+}
